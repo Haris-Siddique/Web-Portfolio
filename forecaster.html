@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+    <link rel="stylesheet" href="forecaster.css" />
+  </head>
+  <body>
+    <div class="mainContainer">
+      <div class="dateSpanContainer">
+        <h1 class="dateSpanHead">Year Selector</h1>
+        <span class="prevButton">
+          <button onclick="prevYearSelector()" class="up">&uHar;</button>
+        </span>
+        <div class="currDate">2022</div>
+        <span class="nextButton">
+          <button onclick="nextYearSelector()" class="down">&dHar;</button>
+        </span>
+        <div class="error"></div>
+      </div>
+      <div class="chart-container">
+        <canvas id="myChart"></canvas>
+        <div style="margin-left: 10px; margin-top: 30px">
+          <input type="checkbox" id="solidFuels" checked /> Solid Fuels (D7DW)
+          <input type="checkbox" id="gas" checked /> Gas (D7DU)
+          <input type="checkbox" id="electricity" checked /> Electricity (D7DT)
+          <input type="checkbox" id="liquidFuels" checked /> Liquid Fuels (D7DV)
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./forecaster.js"></script>
+</html>

@@ -1,0 +1,145 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Color */
+  --primary-color: #3ddc91;
+  --primary-color-dark: #2eb978;
+  --primary-color-extradark: #006400;
+  --secondary-color: #edf7f5;
+
+  --white-color: #fff;
+  --white-blur: rgba(255, 255, 255, 0.913);
+  --blur-color: rgba(7, 246, 134, 0.114);
+
+  --light-gray: #f9f9f7;
+  --yellow-color: #ffcd48;
+
+  --red-color: #d9534f;
+  --light-red: #ffd1d1;
+
+  --text-color: #111827;
+
+  /* border radius */
+  --radius-sm: 1rem;
+  --radius-full: 5rem;
+
+  /* Headings */
+  --h1: 5rem;
+  --h3: 3rem;
+  --h5: 2rem;
+
+  /* font size */
+  --base-size: 1.6rem;
+  --large-size: 2rem;
+
+  /* shadows  */
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-sm: 0 10px 15px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 20px 15px rgba(0, 0, 0, 0.2);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: var(--base-size);
+  background-image: url(./images/dollar-background.jpg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#converter {
+  max-width: 45rem;
+  margin-top: 10rem;
+  background-color: var(--white-blur);
+  padding: 20px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+h2 {
+  color: var(--text-color);
+  font-size: var(--h3);
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary-color-dark);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: var(--text-color);
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 2rem;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--radius-sm);
+}
+
+input:hover,
+select:hover {
+  outline: 1px solid var(--primary-color-dark);
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid var(--primary-color-dark);
+}
+
+button {
+  background: var(--primary-color);
+  color: var(--white-color);
+  font-weight: bold;
+  font-size: var(--h5);
+  letter-spacing: 0.2rem;
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  border: 3px solid transparent;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: var(--primary-color-dark);
+}
+button:active {
+  background-color: var(--white-color);
+  color: var(--primary-color-dark);
+  border-color: var(--primary-color-dark);
+  transform: translate(-0.3rem, 0.15rem);
+}
+
+#result {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: var(--blur-color);
+  border: 1px solid var(--primary-color-dark);
+  border-radius: var(--radius-sm);
+  display: none;
+  color: var(--primary-color-extradark);
+  line-height: 2.5rem;
+}
+
+#error {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: var(--light-red);
+  border: 1px solid var(--red-color);
+  border-radius: var(--radius-sm);
+  display: none;
+  color: var(--red-color);
+}

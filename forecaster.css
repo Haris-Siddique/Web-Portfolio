@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  /* Color */
+  --primary-color: #3ddc91;
+  --primary-color-dark: #2eb978;
+  --primary-color-extradark: #006400;
+  --secondary-color: #edf7f5;
+
+  --white-color: #fff;
+  --white-blur: rgba(255, 255, 255, 0.913);
+  --blur-color: rgba(7, 246, 134, 0.114);
+
+  --light-gray: #f9f9f7;
+  --yellow-color: #ffcd48;
+
+  --red-color: #d9534f;
+  --light-red: #ffd1d1;
+
+  --text-color: #111827;
+}
+body {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.7)
+    ),
+    url("./images/background.jpg");
+  background-size: cover;
+}
+
+.mainContainer {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  background-color: #ffffffa7;
+}
+.chart-container {
+  margin-top: 70px;
+  grid-column: span 4 / span 4;
+  padding: 0 100px; /* Adjust the padding as needed */
+}
+.dateSpanContainer span > button {
+  border: 0;
+  outline: none;
+  background-color: #ededed;
+  box-shadow: 15px 15px 15px 1px #11182729;
+}
+.dateSpanContainer span > button:hover {
+  box-shadow: 15px 15px 20px 1px #1118271a;
+}
+
+.dateSpanContainer {
+  grid-column: span 1 / span 1;
+  height: 30px;
+  display: grid;
+  scroll-snap-type: mandatory;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.dateSpanContainer > *:nth-child(3) {
+  border-radius: 50px;
+  height: 100px;
+  color: white;
+  font-size: 2rem;
+  background: var(--primary-color-dark);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dateSpanContainer > *:nth-child(3):hover {
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  background: var(--primary-color-dark);
+}
+
+.prevButton,
+.nextButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+} /*
+  .prevButton {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+  .nextButton {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }*/
+.dateSpanHead {
+  color: #333;
+  text-align: center;
+}
+.up {
+  text-align: center;
+  color: green;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.down {
+  cursor: pointer;
+  text-align: center;
+  color: green;
+  font-size: 2rem;
+}
+
+.error {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: var(--light-red);
+  border: 1px solid var(--red-color);
+  border-radius: var(--radius-sm);
+  display: none;
+  color: var(--red-color);
+}
+
+.show {
+  display: block !important;
+}
+
+@media (max-width: 1200px) {
+  .dateSpanContainer {
+    width: 100vw;
+  }
+  .dateSpanContainer span > button {
+    padding: 1rem 2rem;
+    font-size: 3rem;
+    font-weight: 800;
+    width: 10rem;
+  }
+
+  .mainContainer {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 10rem;
+  }
+  .chart-container {
+    order: -1;
+  }
+}
